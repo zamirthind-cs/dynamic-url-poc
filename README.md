@@ -43,6 +43,8 @@ This solution is provided as a **proof of concept** and is offered â€œ**as-is**â
 
 1. In CustomField.Tsx file replace the Taxonomy UID with your Taxonomy's UID
 
+ <img src="public/dynamicurl/tsx-code.png" width="500">
+
 ### Create the App in Developer Hub
 
 1. At the Organization level, on the left-hand sidebar towards the bottom, click the **Developer Hub icon**.
