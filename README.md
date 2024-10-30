@@ -38,28 +38,36 @@ This solution is provided as a **proof of concept** and is offered â€œ**as-is**â
 3. Run the application ```nmp start```. The default is http://localhost:3000/. Alternatively, you can host it and provide the URL in the Developer Hub App Configuration later.
 
 ### Create the App in Developer Hub
-1. At the Organization level, on the left-hand sidebar towards the bottom, click the Developer Hub icon.
+1. At the Organization level, on the left-hand sidebar towards the bottom, click the **Developer Hub icon**.
+
    ![My Image](public/dynamicurl/dev-icon.png)
 
-2. On the top right of your screen create a New App.
-   ![My Image](public/dynamicurl/app_location.png)
+2. On the top right of your screen create a **New App**.
+   
+   ![My Image](public/dynamicurl/new-app.png)
 
 3. Provide the name for the app **Dynamic URL Field** and choose Stack App.
-   ![My Image](public/dynamicurl/app_location.png)
+   
+   ![My Image](public/dynamicurl/create-app.png)
 
-4. 
+4. Click **Hosting** in the left-hand sidebar and select **Custom Hosting**. Use http://localhost:3000/ if hosting locally, otherwise provide the URL where you are hosting the app.
 
+![My Image](public/dynamicurl/hosting.png)
+
+5. Click **UI Locations** in the left-hand sidebar and click the **elipses** to the right of **Custom Field**.
+
+![My Image](public/dynamicurl/custom-field-location.png)
 
 
  
   
-6. Create a custom field app location
+8. Create a custom field app location
    ![My Image](public/dynamicurl/app_location.png)
 
-7. Create the custom field route based on the pathing inside your application. This example uses `/custom-field-dynamic-url` and the type is `Text`
+9. Create the custom field route based on the pathing inside your application. This example uses `/custom-field-dynamic-url` and the type is `Text`
    ![My Image](public/dynamicurl/custom_field.png)
 
-8. Go to your content model and create a custom field and select the custom field you just created
+10. Go to your content model and create a custom field and select the custom field you just created
    ![My Image](public/dynamicurl/content_model.png)
 
 The app is hardcoded and these rules have to be followed:
