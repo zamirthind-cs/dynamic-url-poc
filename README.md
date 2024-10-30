@@ -1,5 +1,5 @@
 # Developing Dynamic URL Structures via Contentstack Taxonomy
-
+**Authors:** Jaime Santos & Zamir Thind
 
 ### Description
 
@@ -23,59 +23,81 @@ This solution is provided as a **proof of concept** and is offered â€œ**as-is**â
 - By using this repository, you acknowledge that **Contentstack** holds no responsibility for any consequences, including but not limited to **data breaches**, **system failures**, or **operational issues**.
 
 ## Requirements
+
 - Owner/Admin Role within your Contentstack Stack or Org.
 - Access to Contentstack [Developer Hub](https://www.contentstack.com/docs/developers/developer-hub) and [Taxonomy](https://www.contentstack.com/docs/developers/taxonomy).
+- A sample Taxonomy built within your Stack and the Taxonomy UID.
 - NPM and Node.js
 - Typescript
-- VS Code or other IDEA
+- VS Code or other IDE
 
 ## Steps
 
 ### Install and Run the Application
 
 1. Clone this repository locally.
-2. Install the dependencies. ```npm i```.
-3. Run the application ```nmp start```. The default is http://localhost:3000/. Alternatively, you can host it and provide the URL in the Developer Hub App Configuration later.
+2. Install the dependencies. `npm i`.
+3. Run the application `nmp start`. The default is http://localhost:3000/. Alternatively, you can host it and provide the URL in the Developer Hub App Configuration later.
+
+### Update the CustomField.Tsx File
+
+1. In CustomField.Tsx file replace the Taxonomy UID with your Taxonomy's UID
 
 ### Create the App in Developer Hub
-1. At the Organization level, on the left-hand sidebar towards the bottom, click the **Developer Hub icon**.
 
-   ![My Image](public/dynamicurl/dev-icon.png)
+1. At the Organization level, on the left-hand sidebar towards the bottom, click the **Developer Hub icon**.
+   
+<img src="public/dynamicurl/dev-icon.png" >
 
 2. On the top right of your screen create a **New App**.
    
-   ![My Image](public/dynamicurl/new-app.png)
+<img src="public/dynamicurl/new-app.png" width="500">
 
 3. Provide the name for the app **Dynamic URL Field** and choose Stack App.
-   
-   ![My Image](public/dynamicurl/create-app.png)
+ <img src="public/dynamicurl/create-app.png" width="500">
 
 4. Click **Hosting** in the left-hand sidebar and select **Custom Hosting**. Use http://localhost:3000/ if hosting locally, otherwise provide the URL where you are hosting the app.
 
-![My Image](public/dynamicurl/hosting.png)
+<img src="public/dynamicurl/hosting.png" width="500">
 
 5. Click **UI Locations** in the left-hand sidebar and click the **elipses** to the right of **Custom Field**.
 
-![My Image](public/dynamicurl/custom-field-location.png)
+<img src="public/dynamicurl/custom-field-location.png" width="600">
 
+6. Create the custom field route based on the path inside your application. This example uses `/custom-field-dynamic-url` and the type is `Text`.
 
- 
-  
-8. Create a custom field app location
-   ![My Image](public/dynamicurl/app_location.png)
+<img src="public/dynamicurl/custom_field.png" width="500">
 
-9. Create the custom field route based on the pathing inside your application. This example uses `/custom-field-dynamic-url` and the type is `Text`
-   ![My Image](public/dynamicurl/custom_field.png)
+7. Install the app on the Stack where your Taxonomy is.
 
-10. Go to your content model and create a custom field and select the custom field you just created
-   ![My Image](public/dynamicurl/content_model.png)
+<img src="public/dynamicurl/install-app.png" width="500">
+
+### Create a Content Model
+
+1. Create a new Content Model of Multiple type. Add the following fields. Include your Taxonomy and install your app in the custom field.
+   - Title field
+   - URL field
+   - Taxonomy field
+   - Custom field
+
+  <img src="public/dynamicurl/content-model-2.png" width="500">
+
+### Create a new Entry from your Content Model
+
+1. Fill out the appropriate fields, select your Taxonomy and save. You should see the changes in real time.
+
+ <img src="public/dynamicurl/dynamic-taxonomy.png" width="600">
+
+### Notes
 
 The app is hardcoded and these rules have to be followed:
 
-1. This field only works after an entry has been **\*saved**
-2. Category (category) field that prepends to the title
-3. Title (title) a default field in Contentstack
-4. URL (url) a default field in Contentstakc
+1. An entry must be **saved** for this to work.
+2. Refresh the page to see the Custom Field display after saving.
+3. Select your Taxonomies in the assigned, structured order (e.g. Parent > Child, NOT Child > Parent)
+4. Title (title) is a default field in Contentstack.
+5. URL (url) is a default field in Contentstack.
+6. Ensure you have a change management process in place.
 
 ## References
 
